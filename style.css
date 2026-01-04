@@ -166,3 +166,71 @@ body {
     font-size: 2rem;
   }
 }
+
+/* Interessen-Bereich */
+.interests {
+  background: #e5dfd4; /* gleiche Beige-Farbe wie rechts im Screenshot */
+  padding: 4rem 1.75rem 5rem;
+}
+
+.interests-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  align-items: stretch;
+}
+
+/* Bild links, vollflächig */
+.interests-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Text rechts */
+.interests-text {
+  padding: 4rem 4.5rem;
+  background: #e5dfd4; /* identisch zum Section-Hintergrund für nahtlosen Übergang */
+}
+
+.interests-title {
+  margin: 0 0 3rem;
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  letter-spacing: 0.01em;
+}
+
+.interest-block + .interest-block {
+  margin-top: 2.5rem;
+}
+
+.interest-heading {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+/* Paragraphen in Interessen */
+.interests-text p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Responsiv für schmalere Screens */
+@media (max-width: 900px) {
+  .interests-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .interests-text {
+    padding: 3rem 1.75rem 3.5rem;
+  }
+
+  .interests-title {
+    font-size: 2.4rem;
+  }
+}
