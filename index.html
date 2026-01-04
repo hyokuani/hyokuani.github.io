@@ -1,91 +1,168 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kosima's Blog</title></title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header class="site-header">
-    <div class="container">
-      <h1 class="site-title">Kosima's Blog</h1>
-      <p class="site-tagline">Ich probiere immer wieder Neues aus und dokumentiere hier meinen Weg.</p>
-    </div>
-  </header>
+/* Grundtypografie und Farben */
+:root {
+  --bg: #c3becf;      /* helles Lila */
+  --text: #151623;    /* fast schwarzblau */
+  --accent: #b4a6c7;  /* dunkleres Lila für Leisten */
+  --nav-text: #26263a;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-serif: "Georgia", "Times New Roman", serif;
+}
 
-  <nav class="site-nav">
-    <div class="container nav-inner">
-      <a href="index.html" class="nav-brand">Home</a>
-      <div class="nav-links">
-        <a href="#about">Über mich</a>
-        <a href="#projects">Projekte</a>
-        <a href="www.instagram.com/hyokuart">Instagram</a>
-      </div>
-    </div>
-  </nav>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-  <main class="container layout">
-    <section class="content">
-      <article class="post">
-        <h2 class="post-title">Proxmox Homelab Setup</h2>
-        <p class="post-meta">Veröffentlicht am 04.01.2026 · Kategorie: Homelab</p>
-        <p>
-          Kurze Einleitung zu deinem Projekt. Hier beschreibst du, was du gebaut hast,
-          welche Hardware du nutzt und welches Ziel das Setup hat.
-        </p>
-        <h3>Architektur</h3>
-        <p>
-          Skizziere hier deine Node‑Struktur, Storage (z.B. NFS/ZFS) und Netzwerk‑Segmente.
-        </p>
-        <h3>Lessons Learned</h3>
-        <ul>
-          <li>Was gut funktioniert hat.</li>
-          <li>Was du anders machen würdest.</li>
-          <li>Offene Punkte / To‑do‑Liste.</li>
-        </ul>
-      </article>
+html, body {
+  margin: 0;
+  padding: 0;
+}
 
-      <article class="post">
-        <h2 class="post-title">Home Assistant Automation</h2>
-        <p class="post-meta">Veröffentlicht am 20.12.2025 · Kategorie: Smart Home</p>
-        <p>
-          Zweiter Beispiel‑Post. Du kannst für jeden neuen Beitrag einfach ein weiteres
-          <code>&lt;article class="post"&gt;</code> hinzufügen.
-        </p>
-      </article>
-    </section>
+body {
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  color: var(--text);
+  background: var(--bg);
+}
 
-    <aside class="sidebar">
-      <section class="widget">
-        <h2>Über mich</h2>
-        <p id="about">
-          Ich probiere immer wieder Neues aus und dokumentiere hier meinen Weg.
-        </p>
-      </section>
+/* Obere schmale Leiste */
+.top-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #e5dfd4;            /* beige/creme wie im Screenshot */
+  border-bottom: 1px solid #d2c8ba;
+}
 
-      <section class="widget" id="projects">
-        <h2>Projekte</h2>
-        <ul>
-          <li><a href="#proxmox-homelab">Proxmox Cluster</a></li>
-          <li><a href="#ha-automation">Home Assistant</a></li>
-        </ul>
-      </section>
+.top-bar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.85rem 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.95rem;
+}
 
-      <section class="widget">
-        <h2>Letzte Beiträge</h2>
-        <ul>
-          <li><a href="#">Proxmox Homelab Setup</a></li>
-          <li><a href="#">Home Assistant Automation</a></li>
-        </ul>
-      </section>
-    </aside>
-  </main>
+.logo {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+}
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2026 Kosima · Gehostet mit GitHub Pages</p>
-    </div>
-  </footer>
-</body>
-</html>
+/* Navigation */
+.main-nav a {
+  color: var(--nav-text);
+  text-decoration: none;
+  margin-left: 1.5rem;
+  position: relative;
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.2rem;
+  width: 0;
+  height: 1px;
+  background: var(--nav-text);
+  transition: width 0.2s ease-out;
+}
+
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+/* Hero-Bereich */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 4rem 1.75rem 6rem;
+}
+
+.hero-inner {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 3rem;
+}
+
+/* Linker Textblock */
+.hero-text {
+  max-width: 620px;
+}
+
+.hero-kicker {
+  margin: 0 0 1.5rem;
+  font-family: var(--font-serif);
+  font-size: 3.2rem;
+  letter-spacing: 0.01em;
+}
+
+.hero-title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.6;
+}
+
+/* Rechte Illustration */
+.hero-illustration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-illustration img {
+  max-width: 340px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 900px) {
+  .hero {
+    padding-top: 3rem;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .hero-illustration {
+    order: -1; /* Illustration nach oben oder unten verschieben, je nach Geschmack */
+  }
+
+  .hero-kicker {
+    font-size: 2.4rem;
+  }
+
+  .hero-title {
+    font-size: 1.2rem;
+  }
+
+  .main-nav a {
+    margin-left: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .top-bar-inner {
+    padding-inline: 1rem;
+  }
+
+  .hero {
+    padding-inline: 1rem;
+    padding-bottom: 4rem;
+  }
+
+  .hero-kicker {
+    font-size: 2rem;
+  }
+}
