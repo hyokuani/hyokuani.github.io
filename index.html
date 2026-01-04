@@ -1,168 +1,23 @@
-/* Grundtypografie und Farben */
-:root {
-  --bg: #c3becf;      /* helles Lila */
-  --text: #151623;    /* fast schwarzblau */
-  --accent: #b4a6c7;  /* dunkleres Lila für Leisten */
-  --nav-text: #26263a;
-  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-serif: "Georgia", "Times New Roman", serif;
-}
+<header class="top-bar">
+  <div class="top-bar-inner">
+    <div class="logo">Kosima’s Blog</div>
+    <nav class="main-nav">
+      <a href="#">Home</a>
+      <a href="#projects">Projekte</a>
+      <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+  </div>
+</header>
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+<main class="hero">
+  <div class="hero-inner">
+    <section class="hero-text">
+      <p class="hero-kicker">Hallo, ich bin Kosima.</p>
+      <h1 class="hero-title">Ich probiere immer wieder Neues aus und dokumentiere meinen Weg hier.</h1>
+    </section>
 
-html, body {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  min-height: 100vh;
-  font-family: var(--font-sans);
-  color: var(--text);
-  background: var(--bg);
-}
-
-/* Obere schmale Leiste */
-.top-bar {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: #e5dfd4;            /* beige/creme wie im Screenshot */
-  border-bottom: 1px solid #d2c8ba;
-}
-
-.top-bar-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0.85rem 1.75rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 0.95rem;
-}
-
-.logo {
-  font-family: var(--font-serif);
-  font-size: 1.1rem;
-}
-
-/* Navigation */
-.main-nav a {
-  color: var(--nav-text);
-  text-decoration: none;
-  margin-left: 1.5rem;
-  position: relative;
-}
-
-.main-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -0.2rem;
-  width: 0;
-  height: 1px;
-  background: var(--nav-text);
-  transition: width 0.2s ease-out;
-}
-
-.main-nav a:hover::after {
-  width: 100%;
-}
-
-/* Hero-Bereich */
-.hero {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  padding: 4rem 1.75rem 6rem;
-}
-
-.hero-inner {
-  max-width: 1200px;
-  width: 100%;
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-  align-items: center;
-  gap: 3rem;
-}
-
-/* Linker Textblock */
-.hero-text {
-  max-width: 620px;
-}
-
-.hero-kicker {
-  margin: 0 0 1.5rem;
-  font-family: var(--font-serif);
-  font-size: 3.2rem;
-  letter-spacing: 0.01em;
-}
-
-.hero-title {
-  margin: 0;
-  font-family: var(--font-serif);
-  font-weight: 400;
-  font-size: 1.4rem;
-  line-height: 1.6;
-}
-
-/* Rechte Illustration */
-.hero-illustration {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero-illustration img {
-  max-width: 340px;
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Responsive Anpassungen */
-@media (max-width: 900px) {
-  .hero {
-    padding-top: 3rem;
-  }
-
-  .hero-inner {
-    grid-template-columns: 1fr;
-    text-align: left;
-  }
-
-  .hero-illustration {
-    order: -1; /* Illustration nach oben oder unten verschieben, je nach Geschmack */
-  }
-
-  .hero-kicker {
-    font-size: 2.4rem;
-  }
-
-  .hero-title {
-    font-size: 1.2rem;
-  }
-
-  .main-nav a {
-    margin-left: 1rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .top-bar-inner {
-    padding-inline: 1rem;
-  }
-
-  .hero {
-    padding-inline: 1rem;
-    padding-bottom: 4rem;
-  }
-
-  .hero-kicker {
-    font-size: 2rem;
-  }
-}
+    <section class="hero-illustration">
+      <img src="kosima-illustration.png" alt="Illustration von Kosima">
+    </section>
+  </div>
+</main>
