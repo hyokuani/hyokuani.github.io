@@ -323,3 +323,29 @@ body {
   }
 }
 
+/* Werkbank-/Post-Seite */
+.hero--post {
+  padding-bottom: 2rem;
+}
+
+.post {
+  background: #e5dfd4;
+  padding: 3rem 1.75rem 4rem;
+}
+
+.post-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.post-content h2,
+.post-content h3 {
+  font-family: var(--font-serif);
+  margin-top: 2.5rem;
+}
+
+.post-content p {
+  margin: 1rem 0;
+  line-height: 1.7;
+}
+
