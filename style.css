@@ -276,9 +276,9 @@ body {
 
 .project-card img {
   width: 100%;
-  height: 260px;
-  object-fit: cover;
-  display: block;
+  height: 260px;           /* feste Höhe statt auto */
+  object-fit: cover;       /* schneidet statt streckt → scharf */
+  object-position: center; /* zentriert das Crop */
 }
 
 .project-meta {
