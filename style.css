@@ -394,19 +394,32 @@ body {
   hyphens: auto;
 }
 
-/* Bilder auf Post-Seiten */
-.image-left {
-  text-align: center;
-  margin: 2rem auto;
+/* Bilder auf Post-Seiten: Immer 3 nebeneinander, maximal so breit wie der Textbereich */
+.post-content .image-left {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
   max-width: 100%;
 }
 
-.image-left img {
-  max-width: 500px;
+.post-content .image-left img {
   width: 100%;
   height: auto;
   display: block;
-  margin: 0 auto;
+  border-radius: 8px;
+}
+
+@media (max-width: 900px) {
+  .post-content .image-left {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .post-content .image-left {
+    grid-template-columns: 1fr;
+  }
 }
 
 .project-link {
