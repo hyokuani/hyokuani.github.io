@@ -433,3 +433,24 @@ body {
   transform: translateY(-2px); /* optional: kleiner Hover-Effekt */
   transition: all 0.2s ease;
 }
+
+.kosten-tabelle {
+  width: 100%;
+  max-width: 400px;
+  margin: 2rem 0;
+  border-collapse: collapse;
+}
+.kosten-tabelle td {
+  padding: 0.2em 0.5em;
+}
+.kosten-tabelle td:nth-child(2) {
+  text-align: right;
+  padding-right: 0.5em;
+  white-space: nowrap;
+  color: #888;
+}
+.kosten-tabelle td:last-child {
+  text-align: right !important;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
