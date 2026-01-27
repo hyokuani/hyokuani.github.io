@@ -1,3 +1,22 @@
+/* 
+  KosimasHandschrift Font
+  © 2026 Kosima
+  Siehe assets/fonts/LICENSE.txt für Lizenzdetails
+*/
+
+/* Kosimas Handschrift laden */
+@font-face {
+  font-family: "KosimasHandschrift";
+  src: url("assets/fonts/KosimasHandschrift_v3_regular.woff2") format("woff2");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "KosimasHandschrift";
+  src: url("assets/fonts/KosimasHandschrift_v3_bold.woff2") format("woff2");
+  font-weight: bold;
+}
+
 /* Grundtypografie und Farben */
 :root {
   --bg: #c3becf;      /* helles Lila */
@@ -5,7 +24,7 @@
   --accent: #b4a6c7;  /* dunkleres Lila für Leisten */
   --nav-text: #26263a;
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-serif: "Georgia", "Times New Roman", serif;
+  --font-serif: "KosimasHandschrift", "Georgia", "Times New Roman", serif;
 }
 
 *,
@@ -99,6 +118,7 @@ body {
   margin: 0 0 1.5rem;
   font-family: var(--font-serif);
   font-size: 3.2rem;
+  font-weight: bold;
   letter-spacing: 0.01em;
 }
 
@@ -106,7 +126,7 @@ body {
   margin: 0;
   font-family: var(--font-serif);
   font-weight: 400;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   line-height: 1.6;
 }
 
@@ -199,6 +219,7 @@ body {
   margin: 0 0 3rem;
   font-family: var(--font-serif);
   font-size: 3rem;
+  font-weight: bold;
   letter-spacing: 0.01em;
 }
 
@@ -209,8 +230,8 @@ body {
 .interest-heading {
   margin: 0 0 0.75rem;
   font-family: var(--font-serif);
-  font-size: 1.4rem;
-  font-weight: 400;
+  font-size: 1.7rem;
+  font-weight: bold;
 }
 
 /* Paragraphen in Interessen */
