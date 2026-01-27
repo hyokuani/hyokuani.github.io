@@ -160,24 +160,7 @@
   </div>
 </section>
 
-<!-- Lightbox Modal -->
-<div id="lightbox-modal" style="display:none;position:fixed;z-index:9999;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);justify-content:center;align-items:center;">
-  <img id="lightbox-img" src="" alt="Großansicht" style="max-width:90vw;max-height:90vh;box-shadow:0 0 32px #000;border-radius:8px;">
-</div>
-<script>
-  // Lightbox für alle Bilder in .image-left
-  document.querySelectorAll('.image-left img').forEach(img => {
-    img.style.cursor = 'zoom-in';
-    img.addEventListener('click', function() {
-      document.getElementById('lightbox-img').src = this.src;
-      document.getElementById('lightbox-modal').style.display = 'flex';
-    });
-  });
-  document.getElementById('lightbox-modal').addEventListener('click', function() {
-    this.style.display = 'none';
-    document.getElementById('lightbox-img').src = '';
-  });
-</script>
+<script src="../lightbox.js"></script>
 
 </body>
 </html>
